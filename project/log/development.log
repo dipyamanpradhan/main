@@ -1,0 +1,140 @@
+  [1m[35m (489.8ms)[0m  [1m[35mCREATE DATABASE "EmployeeManagement_development" ENCODING = 'unicode'[0m
+  [1m[35m (417.7ms)[0m  [1m[35mCREATE DATABASE "EmployeeManagement_test" ENCODING = 'unicode'[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8432004609165867975)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240104062614)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "employee_id" integer, "first_name" character varying, "last_name" character varying, "email" character varying, "phone_numbers" text, "doj" date, "salary" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240104062614"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-01-04 06:27:38.066507"], ["updated_at", "2024-01-04 06:27:38.066507"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8432004609165867975)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8432004609165867975)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240104062614)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20240104062614"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8432004609165867975)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8432004609165867975)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240104062614)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "phone_numbers" text, "doj" date, "salary" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240104062614"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8432004609165867975)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-01-04 12:47:17 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/inguser052/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/inguser052/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.6ms | Allocations: 830)
+Completed 200 OK in 29ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 9228)
+
+
+Started GET "/cjh" for 127.0.0.1 at 2024-01-04 12:47:23 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/cjh"):
+  
+Started GET "/api/employees/1" for ::1 at 2024-01-04 12:47:58 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/employees/1"):
+  
+Started GET "/employees/1" for ::1 at 2024-01-04 12:48:40 +0530
+  
+ActionController::RoutingError (uninitialized constant EmployeesController):
+  
+Started GET "/api/employees/1" for ::1 at 2024-01-04 13:00:21 +0530
+Processing by Api::EmployeesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:35:in `set_employee'
+Completed 200 OK in 33ms (Views: 0.6ms | ActiveRecord: 9.0ms | Allocations: 24399)
+
+
+Started GET "/api/employees/1/tax_deduction" for ::1 at 2024-01-04 13:05:09 +0530
+Processing by Api::EmployeesController#tax_deduction as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:17:in `tax_deduction'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 3538)
+
+
+  
+NameError (undefined local variable or method `doj' for #<Api::EmployeesController:0x00000000010090>):
+  
+app/controllers/api/employees_controller.rb:42:in `calculate_total_salary'
+app/controllers/api/employees_controller.rb:18:in `tax_deduction'
+Started GET "/api/employees/1/tax_deduction" for ::1 at 2024-01-04 13:06:49 +0530
+Processing by Api::EmployeesController#tax_deduction as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:17:in `tax_deduction'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:42:in `calculate_total_salary'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.5ms | Allocations: 7736)
+
+
+  
+NameError (undefined local variable or method `salary' for #<Api::EmployeesController:0x00000000014938>):
+  
+app/controllers/api/employees_controller.rb:44:in `calculate_total_salary'
+app/controllers/api/employees_controller.rb:18:in `tax_deduction'
+Started GET "/api/employees/1/tax_deduction" for ::1 at 2024-01-04 13:07:28 +0530
+Processing by Api::EmployeesController#tax_deduction as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:17:in `tax_deduction'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:42:in `calculate_total_salary'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:43:in `calculate_total_salary'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 4.5ms | Allocations: 8106)
+
+
+  
+NameError (undefined local variable or method `loss_of_pay_per_day' for #<Api::EmployeesController:0x00000000018f60>):
+  
+app/controllers/api/employees_controller.rb:45:in `calculate_total_salary'
+app/controllers/api/employees_controller.rb:18:in `tax_deduction'
+Started GET "/api/employees/1/tax_deduction" for ::1 at 2024-01-04 13:08:09 +0530
+Processing by Api::EmployeesController#tax_deduction as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:17:in `tax_deduction'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:42:in `calculate_total_salary'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:43:in `calculate_total_salary'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.4ms | Allocations: 7984)
+
+
+  
+NoMethodError (undefined method `employee_id' for #<Employee id: 1, first_name: "Harry", last_name: "Poter", email: "harry@gmail.com", phone_numbers: "1023654789", doj: "2019-05-16", salary: 0.5e5, created_at: "2024-01-04 12:43:43.676701000 +0000", updated_at: "2024-01-04 12:43:43.676701000 +0000">):
+  
+app/controllers/api/employees_controller.rb:23:in `tax_deduction'
+Started GET "/api/employees/1/tax_deduction" for ::1 at 2024-01-04 13:08:33 +0530
+Processing by Api::EmployeesController#tax_deduction as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:17:in `tax_deduction'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:42:in `calculate_total_salary'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/employees_controller.rb:43:in `calculate_total_salary'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 5415)
+
+
